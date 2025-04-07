@@ -570,9 +570,9 @@ main {
 	line-height: 100px;
 }
 
-.circles {
-	height: 600px;
-}
+// .circles {
+// 	height: 600px;
+// } // дурацкий кусок кода, который все рушил, зачем это сюда вообще написали?! :(
 
 .circle {
 	opacity: 0;
@@ -638,11 +638,40 @@ main {
 
 @media (max-width: 490px) {
 
-	.circles {
-		height: 1200px;
+	.header__introduction {
+		background-image: url(img/sticker-img/sticker1.png);
+		background-position: center calc(370px);
+		background-size: contain;
+		background-repeat: no-repeat;
 	}
 
-	.circle {
+	.date {
+		span {
+			font-size: 1.5rem;
+		}
+	}
+
+	.main__cards {
+
+		.neuro-name {
+			font-size: 2.75rem;
+			text-align: center;
+		}
+
+		.neuro-title {
+			text-align: center;
+			margin: 30px 0;
+		}
+
+		.wrapper {
+			flex-wrap: wrap;
+			justify-content: center;
+			gap: 6vh;
+		}
+	}
+
+	.circle.active {
+		opacity: 1;
 		height: auto !important;
 	}
 
