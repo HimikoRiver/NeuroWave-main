@@ -164,7 +164,6 @@ header {
     display: none; }
 
 main {
-  background-color: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -441,8 +440,10 @@ main {
   position: relative;
   z-index: 5; }
 
-.main__neuro-presentation > * {
-  padding: 0; }
+.main__neuro-presentation {
+  margin-bottom: 70px; }
+  .main__neuro-presentation > * {
+    padding: 0; }
 
 .auction-product__info {
   width: 100%;
@@ -545,6 +546,120 @@ main {
   .carousel-control-prev .carousel-control-next-icon {
     background-image: url(img/icons/arrow-right.png); }
 
+.main__new-works {
+  width: 100%;
+  height: 70vh; }
+
+.background-container {
+  background-color: #000; }
+
+.main__new-works__slider {
+  position: relative;
+  /* Устанавливаем относительное позиционирование для родительского контейнера */
+  width: 100%;
+  height: 50vh;
+  /* Устанавливаем высоту для родительского контейнера */
+  overflow: hidden;
+  /* Скрываем переполнение */ }
+
+.main__new-works__slider-item {
+  height: 50vh;
+  /* Устанавливаем фиксированную высоту */
+  background-color: #000;
+  /* Замените на ваш цвет */
+  opacity: 0;
+  /* Устанавливаем непрозрачность в 0 */
+  visibility: hidden;
+  /* Скрываем элемент */
+  -webkit-transition: opacity 0.5s ease, -webkit-transform 0.5s ease;
+  transition: opacity 0.5s ease, -webkit-transform 0.5s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease, -webkit-transform 0.5s ease;
+  /* Плавный переход для opacity и transform */
+  position: absolute;
+  /* Позволяет избежать влияния на высоту родительского контейнера */
+  width: 100%;
+  /* Устанавливаем ширину в 100% */
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  /* Сдвигаем слайд вправо */ }
+
+.main__new-works__slider-item.active {
+  visibility: visible;
+  /* Делаем элемент видимым */
+  opacity: 1;
+  /* Устанавливаем непрозрачность в 1 */
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  /* Возвращаем слайд на место */ }
+
+.main__new-works__slider-item.prev {
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  /* Сдвигаем предыдущий слайд влево */ }
+
+.main__new-works__slider-identifiers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  margin-top: 60px; }
+
+.main__new-works__identifier {
+  color: #fff;
+  cursor: pointer;
+  border: 2px solid #d13130;
+  border-radius: 40px;
+  padding: 8px 21px;
+  width: auto;
+  height: auto;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 16px;
+  color: var(#fff);
+  opacity: 1;
+  -webkit-transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out; }
+
+.main__new-works__identifier.active {
+  color: #d13130; }
+
+.main__new-works__title {
+  color: #fff;
+  margin-bottom: 34px;
+  padding-left: 64px;
+  background-image: url(img/icons/fire.png);
+  background-position: left center;
+  background-size: 48px 48px;
+  background-repeat: no-repeat;
+  margin: 0;
+  font-family: 'Russo One', sans-serif;
+  font-size: 60px;
+  line-height: 72px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.main__slider-button {
+  font-size: 120px;
+  color: #d13130;
+  text-align: center;
+  cursor: pointer;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s; }
+
+.img-parent {
+  width: 100%;
+  margin-top: 30px; }
+  .img-parent > :not(:last-child) {
+    width: 300px;
+    height: 300px;
+    margin-right: 20px; }
+  .img-parent :last-child {
+    width: 600px;
+    height: 300px;
+    border-radius: 30px; }
+
 @media (max-width: 991.98px) {
   .ms-5 {
     margin: inherit !important; }
@@ -559,6 +674,24 @@ main {
     background-position: center calc(370px);
     background-size: contain;
     background-repeat: no-repeat; }
+
+  .img-parent {
+    width: 100%;
+    margin-top: 30px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap; }
+    .img-parent > :not(:last-child) {
+      width: 150px;
+      height: 150px;
+      margin-right: 10px; }
+    .img-parent :last-child {
+      width: 100%;
+      height: 100%; }
 
   .date span {
     font-size: 1.5rem; }
